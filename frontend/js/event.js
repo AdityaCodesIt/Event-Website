@@ -3,7 +3,7 @@ const eventList = document.getElementById("eventList");
 
 async function loadEvents() {
     try {
-        const response = await fetch("http://localhost:5000/api/events");
+        const response = await fetch("https://event-website-aoyw.onrender.com/api/events");
         const events = await response.json();
 
         eventList.innerHTML = "";
@@ -48,7 +48,7 @@ form.addEventListener("submit", async (e) => {
     }
 
     try {
-        const response = await fetch("http://localhost:5000/api/events", {
+        const response = await fetch("https://event-website-aoyw.onrender.com/api/events", {
 
             method: "POST",
 
@@ -101,7 +101,7 @@ async function deleteEvent(id) {
     }
 
     try {
-        const response = await fetch(`http://localhost:5000/api/events/${id}`, {
+        const response = await fetch(`https://event-website-aoyw.onrender.com/api/events/${id}`, {
 
             method: "DELETE",
 

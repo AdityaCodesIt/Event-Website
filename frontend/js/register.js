@@ -17,7 +17,7 @@ form.addEventListener("submit", async function (e) {
     }
 
     try {
-        const response = await fetch("http://localhost:5000/api/auth/register", {
+        const response = await fetch("https://event-website-aoyw.onrender.com/api/auth/register", {
 
             method: "POST",
 
