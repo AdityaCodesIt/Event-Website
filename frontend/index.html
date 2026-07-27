@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Design</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+
+        <header class="header">
+            <a href="event.html">
+                <button class="start-btn">Let's Start</button>
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#aboutUs">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </header>
+
+
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="hero-text">
+
+
+                    <h1>EVENT DESIGN</h1>
+                    <h2>Your Dream Event. Designed to Perfection</h2>
+                    <p>
+                        Imagine walking into a space that's beautifully designed just for your celebration.
+                        Whether you're hosting a cozy get‑together, a grand wedding, or a fun holiday party —
+                        we're here to turn your ideas into something magical with our creativity and attention to
+                        detail.
+                    </p>
+                    <a href="contact.html"><button>Contact Us</button></a>
+                </div>
+
+                <div class="hero-images">
+                    <div class="image-card main-card">
+                        <img src="img/hero1.jpg" alt="Event table setup">
+                    </div>
+                    <div class="image-card overlay-card">
+                        <img src="img/hero2.jpg" alt="Elegant table decor">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="second" id="events">
+            <div class="content">
+                <h2>Event Set‑Up & Decor</h2>
+                <p>
+                    Stunning tablescapes, floral arrangements, and curated decor pieces
+                    that transform your venue into a breathtaking experience.
+                </p>
+
+                <div class="card-container">
+                    <div class="card">
+                        <img src="img/decor1.jpg" alt="Elegant drinkware setup">
+                        <p>Copper drinkware and floral elegance</p>
+                    </div>
+                    <div class="card">
+                        <img src="img/decor2.jpg" alt="Ceremony seating">
+                        <p>Beautifully arranged ceremony seating</p>
+                    </div>
+                    <div class="card">
+                        <img src="img/decor3.jpg" alt="Outdoor lounge decor">
+                        <p>Outdoor lounge with cozy cushions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="third" id="aboutUs">
+            <div class="content">
+                <h2>About Us</h2>
+                <p>
+                    We believe every event should feel personal, unique, and unforgettable.
+                    Our team blends creativity with precision to deliver designs that speak to your vision.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="img/about.jpg" alt="Our team designing an event">
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+}
+
+.header {
+  background-color: rgba(0, 0, 0, 0.85);
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.header ul {
+  display: flex;
+  gap: 60px;
+}
+
+.header ul li {
+  list-style: none;
+}
+
+.header ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 200;
+  width: auto;
+}
+
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+h1 {
+  text-align: center;
+  margin-top: 100px;
+}
+
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, textarea, button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 15px;
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .header {
+    justify-content: flex-start;
+    padding: 0 20px;
+  }
+
+  .header ul {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 20px 0;
+    gap: 0;
+    text-align: center;
+  }
+
+  .header ul.active {
+    display: flex;
+  }
+
+  .header ul li {
+    padding: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+  }
+
+  .header ul li a {
+    display: block;
+    padding: 15px 0;
+    width: 100%;
+  }
+
+  .header ul li:last-child {
+    border-bottom: none;
+  }
+
+  h1 {
+    margin-top: 80px;
+    font-size: 1.5rem;
+  }
+
+  form {
+    margin: 15px auto;
+    padding: 15px;
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.3rem;
+    margin-top: 70px;
+  }
+
+  form {
+    margin: 10px auto;
+    padding: 12px;
+    width: 95%;
+  }
+}

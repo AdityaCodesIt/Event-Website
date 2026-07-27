@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Event</title>
+  <link rel="stylesheet" href="css/event.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="event.html">Events</a></li>
+        <li><a href="index.html#aboutUs">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </header>
+
+    <h1>Create Event</h1>
+
+    <form id="eventForm">
+      <label>Event Name</label>
+      <input type="text" id="eventName">
+
+      <label>Description</label>
+      <textarea id="description"></textarea>
+
+      <label>Category</label>
+      <input type="text" id="category">
+
+      <label>Date</label>
+      <input type="date" id="date">
+
+      <label>Time</label>
+      <input type="time" id="time">
+
+      <label>Location</label>
+      <input type="text" id="location">
+
+      <label>Maximum Attendees</label>
+      <input type="number" id="maxAttendees">
+
+      <label>Banner Image</label>
+      <input type="file" name="banner">
+
+      <label>Organizer Name</label>
+      <input type="text" id="organizer">
+
+      <button type="submit">Create Event</button>
+    </form>
+
+    <section class="booked-events">
+      <h2>Booked Events</h2>
+      <p>Here are the events booked in the past:</p>
+
+      <div class="event-list" id="eventList">
+      </div>
+    </section>
+  </div>
+
+  <script src="js/event.js"></script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
